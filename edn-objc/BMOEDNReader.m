@@ -88,14 +88,8 @@ id BMOParseSymbolType(id<BMOEDNReaderState> parserState, Class symbolClass) {
 @implementation BMOEDNReader
 
 -(instancetype)initWithOptions:(BMOEDNReadingOptions)options {
-    return [self initWithOptions:options transmogrifiers:nil];
-}
-
--(instancetype)initWithOptions:(BMOEDNReadingOptions)options
-               transmogrifiers:(NSDictionary *)transmogrifiers {
     if (self = [super init]) {
         _options = options;
-        _transmogrifiers = transmogrifiers;
     }
     return self;
 }
@@ -194,7 +188,13 @@ id BMOParseSymbolType(id<BMOEDNReaderState> parserState, Class symbolClass) {
                 parserState.error = BMOEDNErrorMessage(BMOEDNErrorInvalidData, @"Metadata cannot be applied to parsed object with existing metadata.");
                 return nil;
             } else {
-                [parsed setEdnMetadata:meta];
+                if ([parsed supportsEdnMetadata]) {
+                    [parsed setEdnMetadata:meta];
+                } else {
+                    NSString *msg = [NSString stringWithFormat:@"Metadata cannot be applied to class %@", [parsed class]];
+                    parserState.error = BMOEDNErrorMessage(BMOEDNErrorInvalidData, msg);
+                    return nil;
+                }
             }
             break;
         }
@@ -264,7 +264,6 @@ id BMOParseSymbolType(id<BMOEDNReaderState> parserState, Class symbolClass) {
             
             // check for fanciness
             Class registeredClass;
-            BMOEDNTransmogrifier transmogrifier;
             
             // registered classes take precedence
             if ((registeredClass = BMOEDNRegisteredClassForTag(tag))) {
@@ -273,15 +272,9 @@ id BMOParseSymbolType(id<BMOEDNReaderState> parserState, Class symbolClass) {
                 id registeredObject = [registeredClass objectWithEdnRepresentation:taggedElement error:&err];
                 if (err) parserState.error = err;
                 return registeredObject;
-            } else if ((transmogrifier = self.transmogrifiers[tag])) {
-                NSError *err = nil;
-                id transmogrifiedObject = transmogrifier(innards,&err);
-                if (err) parserState.error = err;
-                return transmogrifiedObject;
             } else {
                 return taggedElement;
             }
-            
             break;
     }
 }
@@ -458,11 +451,11 @@ id BMOParseSymbolType(id<BMOEDNReaderState> parserState, Class symbolClass) {
         } else {
             return BMOParseSymbolType(parserState, [BMOEDNSymbol class]);
         }
-    // failed to parse a valid literal
-    // TODO: userinfo
-    parserState.error = [NSError errorWithDomain:BMOEDNErrorDomain
-                                            code:BMOEDNErrorInvalidData
-                                        userInfo:nil];
+//    // failed to parse a valid literal
+//    // TODO: userinfo
+//    parserState.error = [NSError errorWithDomain:BMOEDNErrorDomain
+//                                            code:BMOEDNErrorInvalidData
+//                                        userInfo:nil];
     return nil;
 }
 

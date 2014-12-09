@@ -1,6 +1,9 @@
 edn-objc
 ========
 
+### Update
+I (Jason) have forked the project to update it. So far I have removed the deprecated features, created iOS (8+) and OSX Framework targets, and refactored and updated the test suite to use XCTest and run against the OSX framework.
+
 A work-in-progress implementation of [edn-format](https://github.com/edn-format/edn) for Objective-C/Foundation platforms (e.g. iOS and OSX).
 
 Current design goals are completeness and spec adherence. Any valid edn data deserialized into Cocoa/BMOEDN objects should be serialized back to the same edn UTF-8 data (barring whitespace, both in strings and amidst the edn data). This includes the 'root'; the top-level objects that are not within any root container.

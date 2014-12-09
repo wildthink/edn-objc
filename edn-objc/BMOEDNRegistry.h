@@ -12,19 +12,11 @@
 @class BMOEDNSymbol;
 
 /**
- Transmogrifiers can be registered to a tag or class at runtime
- to bind without a category (or re-bind to a class or tag with
- an existing or stock category).
- */
-typedef id (^BMOEDNTransmogrifier)(id, NSError **) DEPRECATED_MSG_ATTRIBUTE("planning to remove by v1.0");
-
-/**
  Register a class that conforms to BMOEDNRepresentation. 
  Should be safe to call during +load. Will use
  the +ednTag symbol as the tag.
  If the provided class does not conform to BMOEDNRepresentation,
  the invocation is a no-op.
- Class registrations take priority over transmogrifiers.
  */
 void BMOEDNRegisterClass(Class clazz);
 

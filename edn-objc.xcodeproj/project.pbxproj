@@ -7,7 +7,106 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B539281F17D1D31C00B94545 /* edn-objc-tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B539281E17D1D31C00B94545 /* edn-objc-tests.m */; };
+		9640C0501A3766BA000913B9 /* iOSEDN.h in Headers */ = {isa = PBXBuildFile; fileRef = 9640C04F1A3766BA000913B9 /* iOSEDN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0561A3766BA000913B9 /* iOSEDN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9640C04B1A3766BA000913B9 /* iOSEDN.framework */; };
+		9640C05D1A3766BA000913B9 /* iOSEDNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9640C05C1A3766BA000913B9 /* iOSEDNTests.m */; };
+		9640C06E1A3766DB000913B9 /* OSXEDN.h in Headers */ = {isa = PBXBuildFile; fileRef = 9640C06D1A3766DB000913B9 /* OSXEDN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0741A3766DB000913B9 /* OSXEDN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9640C0691A3766DB000913B9 /* OSXEDN.framework */; };
+		9640C07B1A3766DB000913B9 /* OSXEDNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9640C07A1A3766DB000913B9 /* OSXEDNTests.m */; };
+		9640C0821A376731000913B9 /* BMOEDNSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A62E17C8F282005E0615 /* BMOEDNSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0831A376731000913B9 /* BMOEDNRoot.h in Headers */ = {isa = PBXBuildFile; fileRef = B539282817D2F24E00B94545 /* BMOEDNRoot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0841A376731000913B9 /* BMOEDNSymbol.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A65A17CAB73F005E0615 /* BMOEDNSymbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0851A376731000913B9 /* BMOEDNKeyword.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A65117C9B35D005E0615 /* BMOEDNKeyword.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0861A376731000913B9 /* BMOEDNList.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A65717C9C1F4005E0615 /* BMOEDNList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0871A376731000913B9 /* BMOEDNTaggedElement.h in Headers */ = {isa = PBXBuildFile; fileRef = B5B837D817D03B2900AEA457 /* BMOEDNTaggedElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0881A376731000913B9 /* BMOEDNCharacter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A7BA7817DC280B00EE55A1 /* BMOEDNCharacter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0891A376731000913B9 /* BMOEDNRatio.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BCDA3A196EAD6A0007B42A /* BMOEDNRatio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C08A1A376731000913B9 /* BMOEDNRegistry.h in Headers */ = {isa = PBXBuildFile; fileRef = B53AE3D317D1728E000CBCC0 /* BMOEDNRegistry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C08B1A376731000913B9 /* NSUUID+BMOEDN.h in Headers */ = {isa = PBXBuildFile; fileRef = B53AE3CE17D16E2F000CBCC0 /* NSUUID+BMOEDN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C08C1A376731000913B9 /* NSDate+BMOEDN.h in Headers */ = {isa = PBXBuildFile; fileRef = B53AE3DA17D18024000CBCC0 /* NSDate+BMOEDN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C08D1A376731000913B9 /* NSObject+BMOEDN.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A67617CEFB26005E0615 /* NSObject+BMOEDN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C08E1A376731000913B9 /* NSString+BMOEDN.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A65D17CC590A005E0615 /* NSString+BMOEDN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C08F1A376731000913B9 /* NSInputStream+BMOEDN.h in Headers */ = {isa = PBXBuildFile; fileRef = CFA008D017D45E810077B8E2 /* NSInputStream+BMOEDN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0901A376731000913B9 /* NSData+BMOEDN.h in Headers */ = {isa = PBXBuildFile; fileRef = CFA008D417D45F4B0077B8E2 /* NSData+BMOEDN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0911A376731000913B9 /* BMOEDNReaderState.h in Headers */ = {isa = PBXBuildFile; fileRef = CFA008CC17D44C600077B8E2 /* BMOEDNReaderState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0921A376731000913B9 /* BMOEDNReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A66317CDBE73005E0615 /* BMOEDNReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0931A376731000913B9 /* BMOLazyEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = CFA008DE17D4D43C0077B8E2 /* BMOLazyEnumerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0941A376731000913B9 /* BMOEDNUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = B59D8EAC1972FCE800881D63 /* BMOEDNUnarchiver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0951A376731000913B9 /* BMOEDNWriterState.h in Headers */ = {isa = PBXBuildFile; fileRef = CFA008D817D464AC0077B8E2 /* BMOEDNWriterState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0961A376731000913B9 /* BMOEDNWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A67117CEF1AE005E0615 /* BMOEDNWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0971A376731000913B9 /* BMOEDNArchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = B59D8EA11970DBC300881D63 /* BMOEDNArchiver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0981A376731000913B9 /* BMOEDNError.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A66617CDBF30005E0615 /* BMOEDNError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0991A376733000913B9 /* BMOEDNSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A62E17C8F282005E0615 /* BMOEDNSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C09A1A376733000913B9 /* BMOEDNRoot.h in Headers */ = {isa = PBXBuildFile; fileRef = B539282817D2F24E00B94545 /* BMOEDNRoot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C09B1A376733000913B9 /* BMOEDNSymbol.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A65A17CAB73F005E0615 /* BMOEDNSymbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C09C1A376733000913B9 /* BMOEDNKeyword.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A65117C9B35D005E0615 /* BMOEDNKeyword.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C09D1A376733000913B9 /* BMOEDNList.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A65717C9C1F4005E0615 /* BMOEDNList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C09E1A376733000913B9 /* BMOEDNTaggedElement.h in Headers */ = {isa = PBXBuildFile; fileRef = B5B837D817D03B2900AEA457 /* BMOEDNTaggedElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C09F1A376733000913B9 /* BMOEDNCharacter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A7BA7817DC280B00EE55A1 /* BMOEDNCharacter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0A01A376733000913B9 /* BMOEDNRatio.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BCDA3A196EAD6A0007B42A /* BMOEDNRatio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0A11A376733000913B9 /* BMOEDNRegistry.h in Headers */ = {isa = PBXBuildFile; fileRef = B53AE3D317D1728E000CBCC0 /* BMOEDNRegistry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0A21A376733000913B9 /* NSUUID+BMOEDN.h in Headers */ = {isa = PBXBuildFile; fileRef = B53AE3CE17D16E2F000CBCC0 /* NSUUID+BMOEDN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0A31A376733000913B9 /* NSDate+BMOEDN.h in Headers */ = {isa = PBXBuildFile; fileRef = B53AE3DA17D18024000CBCC0 /* NSDate+BMOEDN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0A41A376733000913B9 /* NSObject+BMOEDN.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A67617CEFB26005E0615 /* NSObject+BMOEDN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0A51A376733000913B9 /* NSString+BMOEDN.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A65D17CC590A005E0615 /* NSString+BMOEDN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0A61A376733000913B9 /* NSInputStream+BMOEDN.h in Headers */ = {isa = PBXBuildFile; fileRef = CFA008D017D45E810077B8E2 /* NSInputStream+BMOEDN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0A71A376733000913B9 /* NSData+BMOEDN.h in Headers */ = {isa = PBXBuildFile; fileRef = CFA008D417D45F4B0077B8E2 /* NSData+BMOEDN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0A81A376733000913B9 /* BMOEDNReaderState.h in Headers */ = {isa = PBXBuildFile; fileRef = CFA008CC17D44C600077B8E2 /* BMOEDNReaderState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0A91A376733000913B9 /* BMOEDNReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A66317CDBE73005E0615 /* BMOEDNReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0AA1A376733000913B9 /* BMOLazyEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = CFA008DE17D4D43C0077B8E2 /* BMOLazyEnumerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0AB1A376733000913B9 /* BMOEDNUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = B59D8EAC1972FCE800881D63 /* BMOEDNUnarchiver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0AC1A376733000913B9 /* BMOEDNWriterState.h in Headers */ = {isa = PBXBuildFile; fileRef = CFA008D817D464AC0077B8E2 /* BMOEDNWriterState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0AD1A376733000913B9 /* BMOEDNWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A67117CEF1AE005E0615 /* BMOEDNWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0AE1A376733000913B9 /* BMOEDNArchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = B59D8EA11970DBC300881D63 /* BMOEDNArchiver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0AF1A376733000913B9 /* BMOEDNError.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C7A66617CDBF30005E0615 /* BMOEDNError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9640C0B01A37676B000913B9 /* BMOEDNSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A63017C8F282005E0615 /* BMOEDNSerialization.m */; };
+		9640C0B11A37676B000913B9 /* BMOEDNRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = B539282917D2F24E00B94545 /* BMOEDNRoot.m */; };
+		9640C0B21A37676B000913B9 /* BMOEDNSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A65B17CAB73F005E0615 /* BMOEDNSymbol.m */; };
+		9640C0B31A37676B000913B9 /* BMOEDNKeyword.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A65217C9B35D005E0615 /* BMOEDNKeyword.m */; };
+		9640C0B41A37676B000913B9 /* BMOEDNList.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A65817C9C1F4005E0615 /* BMOEDNList.m */; };
+		9640C0B51A37676B000913B9 /* BMOEDNTaggedElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B837D917D03B2900AEA457 /* BMOEDNTaggedElement.m */; };
+		9640C0B61A37676B000913B9 /* BMOEDNCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A7BA7917DC280B00EE55A1 /* BMOEDNCharacter.m */; };
+		9640C0B71A37676B000913B9 /* BMOEDNRatio.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BCDA3B196EAD6A0007B42A /* BMOEDNRatio.m */; };
+		9640C0B81A37676B000913B9 /* BMOEDNRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = B53AE3D517D17648000CBCC0 /* BMOEDNRegistry.m */; };
+		9640C0B91A37676B000913B9 /* NSUUID+BMOEDN.m in Sources */ = {isa = PBXBuildFile; fileRef = B53AE3CF17D16E2F000CBCC0 /* NSUUID+BMOEDN.m */; };
+		9640C0BA1A37676B000913B9 /* NSDate+BMOEDN.m in Sources */ = {isa = PBXBuildFile; fileRef = B53AE3DB17D18024000CBCC0 /* NSDate+BMOEDN.m */; };
+		9640C0BB1A37676B000913B9 /* NSObject+BMOEDN.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A67717CEFB26005E0615 /* NSObject+BMOEDN.m */; };
+		9640C0BC1A37676B000913B9 /* NSString+BMOEDN.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A65E17CC590A005E0615 /* NSString+BMOEDN.m */; };
+		9640C0BD1A37676B000913B9 /* NSInputStream+BMOEDN.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA008D117D45E810077B8E2 /* NSInputStream+BMOEDN.m */; };
+		9640C0BE1A37676B000913B9 /* NSData+BMOEDN.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA008D517D45F4B0077B8E2 /* NSData+BMOEDN.m */; };
+		9640C0BF1A37676B000913B9 /* BMOEDNReaderState.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA008CD17D44C600077B8E2 /* BMOEDNReaderState.m */; };
+		9640C0C01A37676B000913B9 /* BMOEDNReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A66417CDBE73005E0615 /* BMOEDNReader.m */; };
+		9640C0C11A37676B000913B9 /* BMOLazyEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA008DF17D4D43C0077B8E2 /* BMOLazyEnumerator.m */; };
+		9640C0C21A37676B000913B9 /* BMOEDNUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D8EAD1972FCE800881D63 /* BMOEDNUnarchiver.m */; };
+		9640C0C31A37676B000913B9 /* BMOEDNWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA008D917D464AC0077B8E2 /* BMOEDNWriterState.m */; };
+		9640C0C41A37676B000913B9 /* BMOEDNWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A67217CEF1AE005E0615 /* BMOEDNWriter.m */; };
+		9640C0C51A37676B000913B9 /* BMOEDNArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D8EA21970DBC300881D63 /* BMOEDNArchiver.m */; };
+		9640C0C61A37676B000913B9 /* BMOEDNError.m in Sources */ = {isa = PBXBuildFile; fileRef = B539282617D2E53100B94545 /* BMOEDNError.m */; };
+		9640C0C71A37676C000913B9 /* BMOEDNSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A63017C8F282005E0615 /* BMOEDNSerialization.m */; };
+		9640C0C81A37676C000913B9 /* BMOEDNRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = B539282917D2F24E00B94545 /* BMOEDNRoot.m */; };
+		9640C0C91A37676C000913B9 /* BMOEDNSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A65B17CAB73F005E0615 /* BMOEDNSymbol.m */; };
+		9640C0CA1A37676C000913B9 /* BMOEDNKeyword.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A65217C9B35D005E0615 /* BMOEDNKeyword.m */; };
+		9640C0CB1A37676C000913B9 /* BMOEDNList.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A65817C9C1F4005E0615 /* BMOEDNList.m */; };
+		9640C0CC1A37676C000913B9 /* BMOEDNTaggedElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B837D917D03B2900AEA457 /* BMOEDNTaggedElement.m */; };
+		9640C0CD1A37676C000913B9 /* BMOEDNCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A7BA7917DC280B00EE55A1 /* BMOEDNCharacter.m */; };
+		9640C0CE1A37676C000913B9 /* BMOEDNRatio.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BCDA3B196EAD6A0007B42A /* BMOEDNRatio.m */; };
+		9640C0CF1A37676C000913B9 /* BMOEDNRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = B53AE3D517D17648000CBCC0 /* BMOEDNRegistry.m */; };
+		9640C0D01A37676C000913B9 /* NSUUID+BMOEDN.m in Sources */ = {isa = PBXBuildFile; fileRef = B53AE3CF17D16E2F000CBCC0 /* NSUUID+BMOEDN.m */; };
+		9640C0D11A37676C000913B9 /* NSDate+BMOEDN.m in Sources */ = {isa = PBXBuildFile; fileRef = B53AE3DB17D18024000CBCC0 /* NSDate+BMOEDN.m */; };
+		9640C0D21A37676C000913B9 /* NSObject+BMOEDN.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A67717CEFB26005E0615 /* NSObject+BMOEDN.m */; };
+		9640C0D31A37676C000913B9 /* NSString+BMOEDN.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A65E17CC590A005E0615 /* NSString+BMOEDN.m */; };
+		9640C0D41A37676C000913B9 /* NSInputStream+BMOEDN.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA008D117D45E810077B8E2 /* NSInputStream+BMOEDN.m */; };
+		9640C0D51A37676C000913B9 /* NSData+BMOEDN.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA008D517D45F4B0077B8E2 /* NSData+BMOEDN.m */; };
+		9640C0D61A37676C000913B9 /* BMOEDNReaderState.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA008CD17D44C600077B8E2 /* BMOEDNReaderState.m */; };
+		9640C0D71A37676C000913B9 /* BMOEDNReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A66417CDBE73005E0615 /* BMOEDNReader.m */; };
+		9640C0D81A37676C000913B9 /* BMOLazyEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA008DF17D4D43C0077B8E2 /* BMOLazyEnumerator.m */; };
+		9640C0D91A37676C000913B9 /* BMOEDNUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D8EAD1972FCE800881D63 /* BMOEDNUnarchiver.m */; };
+		9640C0DA1A37676C000913B9 /* BMOEDNWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA008D917D464AC0077B8E2 /* BMOEDNWriterState.m */; };
+		9640C0DB1A37676C000913B9 /* BMOEDNWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A67217CEF1AE005E0615 /* BMOEDNWriter.m */; };
+		9640C0DC1A37676C000913B9 /* BMOEDNArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D8EA21970DBC300881D63 /* BMOEDNArchiver.m */; };
+		9640C0DD1A37676C000913B9 /* BMOEDNError.m in Sources */ = {isa = PBXBuildFile; fileRef = B539282617D2E53100B94545 /* BMOEDNError.m */; };
+		9640C0DE1A37690C000913B9 /* NSCodingFoo.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D8EA61972EEC000881D63 /* NSCodingFoo.m */; };
+		9640C0DF1A37690C000913B9 /* NSCodingBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D8EAA1972EF2800881D63 /* NSCodingBar.m */; };
 		B539282717D2E53100B94545 /* BMOEDNError.m in Sources */ = {isa = PBXBuildFile; fileRef = B539282617D2E53100B94545 /* BMOEDNError.m */; };
 		B539282A17D2F24E00B94545 /* BMOEDNRoot.h in Headers */ = {isa = PBXBuildFile; fileRef = B539282817D2F24E00B94545 /* BMOEDNRoot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B539282B17D2F24E00B94545 /* BMOEDNRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = B539282917D2F24E00B94545 /* BMOEDNRoot.m */; };
@@ -19,8 +118,6 @@
 		B53AE3DD17D18024000CBCC0 /* NSDate+BMOEDN.m in Sources */ = {isa = PBXBuildFile; fileRef = B53AE3DB17D18024000CBCC0 /* NSDate+BMOEDN.m */; };
 		B59D8EA31970DBC300881D63 /* BMOEDNArchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = B59D8EA11970DBC300881D63 /* BMOEDNArchiver.h */; };
 		B59D8EA41970DBC300881D63 /* BMOEDNArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D8EA21970DBC300881D63 /* BMOEDNArchiver.m */; };
-		B59D8EA71972EEC000881D63 /* NSCodingFoo.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D8EA61972EEC000881D63 /* NSCodingFoo.m */; };
-		B59D8EAB1972EF2800881D63 /* NSCodingBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D8EAA1972EF2800881D63 /* NSCodingBar.m */; };
 		B59D8EAE1972FCE800881D63 /* BMOEDNUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = B59D8EAC1972FCE800881D63 /* BMOEDNUnarchiver.h */; };
 		B59D8EAF1972FCE800881D63 /* BMOEDNUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D8EAD1972FCE800881D63 /* BMOEDNUnarchiver.m */; };
 		B5A7BA7A17DC280B00EE55A1 /* BMOEDNCharacter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A7BA7817DC280B00EE55A1 /* BMOEDNCharacter.h */; };
@@ -32,10 +129,6 @@
 		B5BCDA3D196EAD6A0007B42A /* BMOEDNRatio.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BCDA3B196EAD6A0007B42A /* BMOEDNRatio.m */; };
 		B5C7A62A17C8F282005E0615 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C7A62917C8F282005E0615 /* Foundation.framework */; };
 		B5C7A63117C8F282005E0615 /* BMOEDNSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A63017C8F282005E0615 /* BMOEDNSerialization.m */; };
-		B5C7A63917C8F282005E0615 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C7A63817C8F282005E0615 /* SenTestingKit.framework */; };
-		B5C7A63B17C8F282005E0615 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C7A63A17C8F282005E0615 /* UIKit.framework */; };
-		B5C7A63C17C8F282005E0615 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C7A62917C8F282005E0615 /* Foundation.framework */; };
-		B5C7A63F17C8F282005E0615 /* libedn-objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C7A62617C8F282005E0615 /* libedn-objc.a */; };
 		B5C7A65317C9B35D005E0615 /* BMOEDNKeyword.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A65217C9B35D005E0615 /* BMOEDNKeyword.m */; };
 		B5C7A65917C9C1F4005E0615 /* BMOEDNList.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A65817C9C1F4005E0615 /* BMOEDNList.m */; };
 		B5C7A65C17CAB740005E0615 /* BMOEDNSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A65B17CAB73F005E0615 /* BMOEDNSymbol.m */; };
@@ -65,12 +158,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B5C7A63D17C8F282005E0615 /* PBXContainerItemProxy */ = {
+		9640C0571A3766BA000913B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B5C7A61E17C8F282005E0615 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B5C7A62517C8F282005E0615;
-			remoteInfo = "edn-objc";
+			remoteGlobalIDString = 9640C04A1A3766BA000913B9;
+			remoteInfo = iOSEDN;
+		};
+		9640C0751A3766DB000913B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5C7A61E17C8F282005E0615 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9640C0681A3766DB000913B9;
+			remoteInfo = OSXEDN;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -88,9 +188,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B539281D17D1D31C00B94545 /* edn-objc-tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = "edn-objc-tests.h"; path = "edn-objc-tests/edn-objc-tests.h"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		B539281E17D1D31C00B94545 /* edn-objc-tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = "edn-objc-tests.m"; path = "edn-objc-tests/edn-objc-tests.m"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		B539282017D1D32E00B94545 /* edn-objc-tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "edn-objc-tests-Info.plist"; path = "edn-objc-tests/edn-objc-tests-Info.plist"; sourceTree = SOURCE_ROOT; };
+		960032541A37643D009F80F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		960032551A37643D009F80F7 /* edn_objc_OSX_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = edn_objc_OSX_Tests.m; sourceTree = "<group>"; };
+		9640C04B1A3766BA000913B9 /* iOSEDN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSEDN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9640C04E1A3766BA000913B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9640C04F1A3766BA000913B9 /* iOSEDN.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSEDN.h; sourceTree = "<group>"; };
+		9640C0551A3766BA000913B9 /* iOSEDNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSEDNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9640C05B1A3766BA000913B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9640C05C1A3766BA000913B9 /* iOSEDNTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSEDNTests.m; sourceTree = "<group>"; };
+		9640C0691A3766DB000913B9 /* OSXEDN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OSXEDN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9640C06C1A3766DB000913B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9640C06D1A3766DB000913B9 /* OSXEDN.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSXEDN.h; sourceTree = "<group>"; };
+		9640C0731A3766DB000913B9 /* OSXEDNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXEDNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9640C0791A3766DB000913B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9640C07A1A3766DB000913B9 /* OSXEDNTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSXEDNTests.m; sourceTree = "<group>"; };
+		9640C0E01A376D9B000913B9 /* edn-objc.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "edn-objc.podspec"; sourceTree = "<group>"; };
+		9640C0E11A376D9B000913B9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B539282617D2E53100B94545 /* BMOEDNError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMOEDNError.m; sourceTree = "<group>"; };
 		B539282817D2F24E00B94545 /* BMOEDNRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMOEDNRoot.h; sourceTree = "<group>"; };
 		B539282917D2F24E00B94545 /* BMOEDNRoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMOEDNRoot.m; sourceTree = "<group>"; };
@@ -120,8 +233,6 @@
 		B5C7A62D17C8F282005E0615 /* edn-objc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "edn-objc-Prefix.pch"; sourceTree = "<group>"; };
 		B5C7A62E17C8F282005E0615 /* BMOEDNSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BMOEDNSerialization.h; sourceTree = "<group>"; };
 		B5C7A63017C8F282005E0615 /* BMOEDNSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BMOEDNSerialization.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		B5C7A63717C8F282005E0615 /* edn-objc-tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "edn-objc-tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5C7A63817C8F282005E0615 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		B5C7A63A17C8F282005E0615 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B5C7A65117C9B35D005E0615 /* BMOEDNKeyword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMOEDNKeyword.h; sourceTree = "<group>"; };
 		B5C7A65217C9B35D005E0615 /* BMOEDNKeyword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMOEDNKeyword.m; sourceTree = "<group>"; };
@@ -152,6 +263,36 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9640C0471A3766BA000913B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9640C0521A3766BA000913B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9640C0561A3766BA000913B9 /* iOSEDN.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9640C0651A3766DB000913B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9640C0701A3766DB000913B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9640C0741A3766DB000913B9 /* OSXEDN.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5C7A62317C8F282005E0615 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -160,20 +301,98 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5C7A63317C8F282005E0615 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5C7A63917C8F282005E0615 /* SenTestingKit.framework in Frameworks */,
-				B5C7A63B17C8F282005E0615 /* UIKit.framework in Frameworks */,
-				B5C7A63C17C8F282005E0615 /* Foundation.framework in Frameworks */,
-				B5C7A63F17C8F282005E0615 /* libedn-objc.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		960032521A37643D009F80F7 /* edn-objc OSX Tests */ = {
+			isa = PBXGroup;
+			children = (
+				960032551A37643D009F80F7 /* edn_objc_OSX_Tests.m */,
+				960032531A37643D009F80F7 /* Supporting Files */,
+			);
+			path = "edn-objc OSX Tests";
+			sourceTree = "<group>";
+		};
+		960032531A37643D009F80F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				960032541A37643D009F80F7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9640C04C1A3766BA000913B9 /* iOSEDN */ = {
+			isa = PBXGroup;
+			children = (
+				9640C04F1A3766BA000913B9 /* iOSEDN.h */,
+				9640C04D1A3766BA000913B9 /* Supporting Files */,
+			);
+			path = iOSEDN;
+			sourceTree = "<group>";
+		};
+		9640C04D1A3766BA000913B9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9640C04E1A3766BA000913B9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9640C0591A3766BA000913B9 /* iOSEDNTests */ = {
+			isa = PBXGroup;
+			children = (
+				B59D8EA51972EEC000881D63 /* NSCodingFoo.h */,
+				B59D8EA61972EEC000881D63 /* NSCodingFoo.m */,
+				B59D8EA91972EF2800881D63 /* NSCodingBar.h */,
+				B59D8EAA1972EF2800881D63 /* NSCodingBar.m */,
+				9640C05C1A3766BA000913B9 /* iOSEDNTests.m */,
+				9640C05A1A3766BA000913B9 /* Supporting Files */,
+			);
+			path = iOSEDNTests;
+			sourceTree = "<group>";
+		};
+		9640C05A1A3766BA000913B9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9640C05B1A3766BA000913B9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9640C06A1A3766DB000913B9 /* OSXEDN */ = {
+			isa = PBXGroup;
+			children = (
+				9640C06D1A3766DB000913B9 /* OSXEDN.h */,
+				9640C06B1A3766DB000913B9 /* Supporting Files */,
+			);
+			path = OSXEDN;
+			sourceTree = "<group>";
+		};
+		9640C06B1A3766DB000913B9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9640C06C1A3766DB000913B9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9640C0771A3766DB000913B9 /* OSXEDNTests */ = {
+			isa = PBXGroup;
+			children = (
+				9640C07A1A3766DB000913B9 /* OSXEDNTests.m */,
+				9640C0781A3766DB000913B9 /* Supporting Files */,
+			);
+			path = OSXEDNTests;
+			sourceTree = "<group>";
+		};
+		9640C0781A3766DB000913B9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9640C0791A3766DB000913B9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		B53AE3D917D17FA5000CBCC0 /* Representation Implementations */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,17 +425,6 @@
 			name = Primitives;
 			sourceTree = "<group>";
 		};
-		B59D8EA81972EECA00881D63 /* NSCoding test classes */ = {
-			isa = PBXGroup;
-			children = (
-				B59D8EA51972EEC000881D63 /* NSCodingFoo.h */,
-				B59D8EA61972EEC000881D63 /* NSCodingFoo.m */,
-				B59D8EA91972EF2800881D63 /* NSCodingBar.h */,
-				B59D8EAA1972EF2800881D63 /* NSCodingBar.m */,
-			);
-			name = "NSCoding test classes";
-			sourceTree = "<group>";
-		};
 		B5B837D517D0389B00AEA457 /* Representation */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,8 +438,14 @@
 		B5C7A61D17C8F282005E0615 = {
 			isa = PBXGroup;
 			children = (
+				9640C0E01A376D9B000913B9 /* edn-objc.podspec */,
+				9640C0E11A376D9B000913B9 /* README.md */,
 				B5C7A62B17C8F282005E0615 /* edn-objc */,
-				B5C7A64017C8F282005E0615 /* edn-objc-tests */,
+				960032521A37643D009F80F7 /* edn-objc OSX Tests */,
+				9640C04C1A3766BA000913B9 /* iOSEDN */,
+				9640C0591A3766BA000913B9 /* iOSEDNTests */,
+				9640C06A1A3766DB000913B9 /* OSXEDN */,
+				9640C0771A3766DB000913B9 /* OSXEDNTests */,
 				B5C7A62817C8F282005E0615 /* Frameworks */,
 				B5C7A62717C8F282005E0615 /* Products */,
 			);
@@ -241,7 +455,10 @@
 			isa = PBXGroup;
 			children = (
 				B5C7A62617C8F282005E0615 /* libedn-objc.a */,
-				B5C7A63717C8F282005E0615 /* edn-objc-tests.octest */,
+				9640C04B1A3766BA000913B9 /* iOSEDN.framework */,
+				9640C0551A3766BA000913B9 /* iOSEDNTests.xctest */,
+				9640C0691A3766DB000913B9 /* OSXEDN.framework */,
+				9640C0731A3766DB000913B9 /* OSXEDNTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -250,7 +467,6 @@
 			isa = PBXGroup;
 			children = (
 				B5C7A62917C8F282005E0615 /* Foundation.framework */,
-				B5C7A63817C8F282005E0615 /* SenTestingKit.framework */,
 				B5C7A63A17C8F282005E0615 /* UIKit.framework */,
 			);
 			name = Frameworks;
@@ -280,18 +496,6 @@
 				B5C7A62D17C8F282005E0615 /* edn-objc-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B5C7A64017C8F282005E0615 /* edn-objc-tests */ = {
-			isa = PBXGroup;
-			children = (
-				B59D8EA81972EECA00881D63 /* NSCoding test classes */,
-				B539281D17D1D31C00B94545 /* edn-objc-tests.h */,
-				B539281E17D1D31C00B94545 /* edn-objc-tests.m */,
-				B539282017D1D32E00B94545 /* edn-objc-tests-Info.plist */,
-			);
-			name = "edn-objc-tests";
-			path = "edn-objcTests";
 			sourceTree = "<group>";
 		};
 		B5C7A67517CEFAE5005E0615 /* Categories */ = {
@@ -349,6 +553,68 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		9640C0481A3766BA000913B9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9640C0941A376731000913B9 /* BMOEDNUnarchiver.h in Headers */,
+				9640C0901A376731000913B9 /* NSData+BMOEDN.h in Headers */,
+				9640C0981A376731000913B9 /* BMOEDNError.h in Headers */,
+				9640C08D1A376731000913B9 /* NSObject+BMOEDN.h in Headers */,
+				9640C08F1A376731000913B9 /* NSInputStream+BMOEDN.h in Headers */,
+				9640C0961A376731000913B9 /* BMOEDNWriter.h in Headers */,
+				9640C08C1A376731000913B9 /* NSDate+BMOEDN.h in Headers */,
+				9640C0921A376731000913B9 /* BMOEDNReader.h in Headers */,
+				9640C0831A376731000913B9 /* BMOEDNRoot.h in Headers */,
+				9640C0881A376731000913B9 /* BMOEDNCharacter.h in Headers */,
+				9640C08B1A376731000913B9 /* NSUUID+BMOEDN.h in Headers */,
+				9640C0861A376731000913B9 /* BMOEDNList.h in Headers */,
+				9640C0821A376731000913B9 /* BMOEDNSerialization.h in Headers */,
+				9640C0931A376731000913B9 /* BMOLazyEnumerator.h in Headers */,
+				9640C0951A376731000913B9 /* BMOEDNWriterState.h in Headers */,
+				9640C0971A376731000913B9 /* BMOEDNArchiver.h in Headers */,
+				9640C0911A376731000913B9 /* BMOEDNReaderState.h in Headers */,
+				9640C0501A3766BA000913B9 /* iOSEDN.h in Headers */,
+				9640C0851A376731000913B9 /* BMOEDNKeyword.h in Headers */,
+				9640C08A1A376731000913B9 /* BMOEDNRegistry.h in Headers */,
+				9640C0841A376731000913B9 /* BMOEDNSymbol.h in Headers */,
+				9640C08E1A376731000913B9 /* NSString+BMOEDN.h in Headers */,
+				9640C0871A376731000913B9 /* BMOEDNTaggedElement.h in Headers */,
+				9640C0891A376731000913B9 /* BMOEDNRatio.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9640C0661A3766DB000913B9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9640C0AB1A376733000913B9 /* BMOEDNUnarchiver.h in Headers */,
+				9640C0A71A376733000913B9 /* NSData+BMOEDN.h in Headers */,
+				9640C0AF1A376733000913B9 /* BMOEDNError.h in Headers */,
+				9640C0A41A376733000913B9 /* NSObject+BMOEDN.h in Headers */,
+				9640C0A61A376733000913B9 /* NSInputStream+BMOEDN.h in Headers */,
+				9640C0AD1A376733000913B9 /* BMOEDNWriter.h in Headers */,
+				9640C0A31A376733000913B9 /* NSDate+BMOEDN.h in Headers */,
+				9640C0A91A376733000913B9 /* BMOEDNReader.h in Headers */,
+				9640C09A1A376733000913B9 /* BMOEDNRoot.h in Headers */,
+				9640C09F1A376733000913B9 /* BMOEDNCharacter.h in Headers */,
+				9640C0A21A376733000913B9 /* NSUUID+BMOEDN.h in Headers */,
+				9640C09D1A376733000913B9 /* BMOEDNList.h in Headers */,
+				9640C0991A376733000913B9 /* BMOEDNSerialization.h in Headers */,
+				9640C0AA1A376733000913B9 /* BMOLazyEnumerator.h in Headers */,
+				9640C0AC1A376733000913B9 /* BMOEDNWriterState.h in Headers */,
+				9640C0AE1A376733000913B9 /* BMOEDNArchiver.h in Headers */,
+				9640C0A81A376733000913B9 /* BMOEDNReaderState.h in Headers */,
+				9640C06E1A3766DB000913B9 /* OSXEDN.h in Headers */,
+				9640C09C1A376733000913B9 /* BMOEDNKeyword.h in Headers */,
+				9640C0A11A376733000913B9 /* BMOEDNRegistry.h in Headers */,
+				9640C09B1A376733000913B9 /* BMOEDNSymbol.h in Headers */,
+				9640C0A51A376733000913B9 /* NSString+BMOEDN.h in Headers */,
+				9640C09E1A376733000913B9 /* BMOEDNTaggedElement.h in Headers */,
+				9640C0A01A376733000913B9 /* BMOEDNRatio.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5C7A66917CDC1F6005E0615 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -382,6 +648,78 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		9640C04A1A3766BA000913B9 /* iOSEDN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9640C05E1A3766BA000913B9 /* Build configuration list for PBXNativeTarget "iOSEDN" */;
+			buildPhases = (
+				9640C0461A3766BA000913B9 /* Sources */,
+				9640C0471A3766BA000913B9 /* Frameworks */,
+				9640C0481A3766BA000913B9 /* Headers */,
+				9640C0491A3766BA000913B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSEDN;
+			productName = iOSEDN;
+			productReference = 9640C04B1A3766BA000913B9 /* iOSEDN.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9640C0541A3766BA000913B9 /* iOSEDNTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9640C0611A3766BA000913B9 /* Build configuration list for PBXNativeTarget "iOSEDNTests" */;
+			buildPhases = (
+				9640C0511A3766BA000913B9 /* Sources */,
+				9640C0521A3766BA000913B9 /* Frameworks */,
+				9640C0531A3766BA000913B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9640C0581A3766BA000913B9 /* PBXTargetDependency */,
+			);
+			name = iOSEDNTests;
+			productName = iOSEDNTests;
+			productReference = 9640C0551A3766BA000913B9 /* iOSEDNTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9640C0681A3766DB000913B9 /* OSXEDN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9640C07C1A3766DB000913B9 /* Build configuration list for PBXNativeTarget "OSXEDN" */;
+			buildPhases = (
+				9640C0641A3766DB000913B9 /* Sources */,
+				9640C0651A3766DB000913B9 /* Frameworks */,
+				9640C0661A3766DB000913B9 /* Headers */,
+				9640C0671A3766DB000913B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OSXEDN;
+			productName = OSXEDN;
+			productReference = 9640C0691A3766DB000913B9 /* OSXEDN.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9640C0721A3766DB000913B9 /* OSXEDNTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9640C07F1A3766DB000913B9 /* Build configuration list for PBXNativeTarget "OSXEDNTests" */;
+			buildPhases = (
+				9640C06F1A3766DB000913B9 /* Sources */,
+				9640C0701A3766DB000913B9 /* Frameworks */,
+				9640C0711A3766DB000913B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9640C0761A3766DB000913B9 /* PBXTargetDependency */,
+			);
+			name = OSXEDNTests;
+			productName = OSXEDNTests;
+			productReference = 9640C0731A3766DB000913B9 /* OSXEDNTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B5C7A62517C8F282005E0615 /* edn-objc */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5C7A64B17C8F282005E0615 /* Build configuration list for PBXNativeTarget "edn-objc" */;
@@ -400,33 +738,29 @@
 			productReference = B5C7A62617C8F282005E0615 /* libedn-objc.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		B5C7A63617C8F282005E0615 /* edn-objc-tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B5C7A64E17C8F282005E0615 /* Build configuration list for PBXNativeTarget "edn-objc-tests" */;
-			buildPhases = (
-				B5C7A63217C8F282005E0615 /* Sources */,
-				B5C7A63317C8F282005E0615 /* Frameworks */,
-				B5C7A63417C8F282005E0615 /* Resources */,
-				B5C7A63517C8F282005E0615 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B5C7A63E17C8F282005E0615 /* PBXTargetDependency */,
-			);
-			name = "edn-objc-tests";
-			productName = "edn-objcTests";
-			productReference = B5C7A63717C8F282005E0615 /* edn-objc-tests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		B5C7A61E17C8F282005E0615 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0610;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Ben Mosher";
+				TargetAttributes = {
+					9640C04A1A3766BA000913B9 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					9640C0541A3766BA000913B9 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					9640C0681A3766DB000913B9 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					9640C0721A3766DB000913B9 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
 			};
 			buildConfigurationList = B5C7A62117C8F282005E0615 /* Build configuration list for PBXProject "edn-objc" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -441,13 +775,37 @@
 			projectRoot = "";
 			targets = (
 				B5C7A62517C8F282005E0615 /* edn-objc */,
-				B5C7A63617C8F282005E0615 /* edn-objc-tests */,
+				9640C04A1A3766BA000913B9 /* iOSEDN */,
+				9640C0541A3766BA000913B9 /* iOSEDNTests */,
+				9640C0681A3766DB000913B9 /* OSXEDN */,
+				9640C0721A3766DB000913B9 /* OSXEDNTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B5C7A63417C8F282005E0615 /* Resources */ = {
+		9640C0491A3766BA000913B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9640C0531A3766BA000913B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9640C0671A3766DB000913B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9640C0711A3766DB000913B9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -456,23 +814,85 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		B5C7A63517C8F282005E0615 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXSourcesBuildPhase section */
+		9640C0461A3766BA000913B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
+				9640C0C51A37676B000913B9 /* BMOEDNArchiver.m in Sources */,
+				9640C0B91A37676B000913B9 /* NSUUID+BMOEDN.m in Sources */,
+				9640C0BE1A37676B000913B9 /* NSData+BMOEDN.m in Sources */,
+				9640C0B81A37676B000913B9 /* BMOEDNRegistry.m in Sources */,
+				9640C0BA1A37676B000913B9 /* NSDate+BMOEDN.m in Sources */,
+				9640C0C41A37676B000913B9 /* BMOEDNWriter.m in Sources */,
+				9640C0C11A37676B000913B9 /* BMOLazyEnumerator.m in Sources */,
+				9640C0C21A37676B000913B9 /* BMOEDNUnarchiver.m in Sources */,
+				9640C0B31A37676B000913B9 /* BMOEDNKeyword.m in Sources */,
+				9640C0BB1A37676B000913B9 /* NSObject+BMOEDN.m in Sources */,
+				9640C0B11A37676B000913B9 /* BMOEDNRoot.m in Sources */,
+				9640C0BF1A37676B000913B9 /* BMOEDNReaderState.m in Sources */,
+				9640C0C61A37676B000913B9 /* BMOEDNError.m in Sources */,
+				9640C0B21A37676B000913B9 /* BMOEDNSymbol.m in Sources */,
+				9640C0C01A37676B000913B9 /* BMOEDNReader.m in Sources */,
+				9640C0B61A37676B000913B9 /* BMOEDNCharacter.m in Sources */,
+				9640C0C31A37676B000913B9 /* BMOEDNWriterState.m in Sources */,
+				9640C0BC1A37676B000913B9 /* NSString+BMOEDN.m in Sources */,
+				9640C0B71A37676B000913B9 /* BMOEDNRatio.m in Sources */,
+				9640C0B51A37676B000913B9 /* BMOEDNTaggedElement.m in Sources */,
+				9640C0B41A37676B000913B9 /* BMOEDNList.m in Sources */,
+				9640C0BD1A37676B000913B9 /* NSInputStream+BMOEDN.m in Sources */,
+				9640C0B01A37676B000913B9 /* BMOEDNSerialization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
+		9640C0511A3766BA000913B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9640C05D1A3766BA000913B9 /* iOSEDNTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9640C0641A3766DB000913B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9640C0DC1A37676C000913B9 /* BMOEDNArchiver.m in Sources */,
+				9640C0D01A37676C000913B9 /* NSUUID+BMOEDN.m in Sources */,
+				9640C0D51A37676C000913B9 /* NSData+BMOEDN.m in Sources */,
+				9640C0CF1A37676C000913B9 /* BMOEDNRegistry.m in Sources */,
+				9640C0D11A37676C000913B9 /* NSDate+BMOEDN.m in Sources */,
+				9640C0DB1A37676C000913B9 /* BMOEDNWriter.m in Sources */,
+				9640C0D81A37676C000913B9 /* BMOLazyEnumerator.m in Sources */,
+				9640C0D91A37676C000913B9 /* BMOEDNUnarchiver.m in Sources */,
+				9640C0CA1A37676C000913B9 /* BMOEDNKeyword.m in Sources */,
+				9640C0D21A37676C000913B9 /* NSObject+BMOEDN.m in Sources */,
+				9640C0C81A37676C000913B9 /* BMOEDNRoot.m in Sources */,
+				9640C0D61A37676C000913B9 /* BMOEDNReaderState.m in Sources */,
+				9640C0DD1A37676C000913B9 /* BMOEDNError.m in Sources */,
+				9640C0C91A37676C000913B9 /* BMOEDNSymbol.m in Sources */,
+				9640C0D71A37676C000913B9 /* BMOEDNReader.m in Sources */,
+				9640C0CD1A37676C000913B9 /* BMOEDNCharacter.m in Sources */,
+				9640C0DA1A37676C000913B9 /* BMOEDNWriterState.m in Sources */,
+				9640C0D31A37676C000913B9 /* NSString+BMOEDN.m in Sources */,
+				9640C0CE1A37676C000913B9 /* BMOEDNRatio.m in Sources */,
+				9640C0CC1A37676C000913B9 /* BMOEDNTaggedElement.m in Sources */,
+				9640C0CB1A37676C000913B9 /* BMOEDNList.m in Sources */,
+				9640C0D41A37676C000913B9 /* NSInputStream+BMOEDN.m in Sources */,
+				9640C0C71A37676C000913B9 /* BMOEDNSerialization.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9640C06F1A3766DB000913B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9640C07B1A3766DB000913B9 /* OSXEDNTests.m in Sources */,
+				9640C0DF1A37690C000913B9 /* NSCodingBar.m in Sources */,
+				9640C0DE1A37690C000913B9 /* NSCodingFoo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5C7A62217C8F282005E0615 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -503,27 +923,286 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5C7A63217C8F282005E0615 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B539281F17D1D31C00B94545 /* edn-objc-tests.m in Sources */,
-				B59D8EAB1972EF2800881D63 /* NSCodingBar.m in Sources */,
-				B59D8EA71972EEC000881D63 /* NSCodingFoo.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B5C7A63E17C8F282005E0615 /* PBXTargetDependency */ = {
+		9640C0581A3766BA000913B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B5C7A62517C8F282005E0615 /* edn-objc */;
-			targetProxy = B5C7A63D17C8F282005E0615 /* PBXContainerItemProxy */;
+			target = 9640C04A1A3766BA000913B9 /* iOSEDN */;
+			targetProxy = 9640C0571A3766BA000913B9 /* PBXContainerItemProxy */;
+		};
+		9640C0761A3766DB000913B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9640C0681A3766DB000913B9 /* OSXEDN */;
+			targetProxy = 9640C0751A3766DB000913B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		9640C05F1A3766BA000913B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = iOSEDN/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9640C0601A3766BA000913B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = iOSEDN/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9640C0621A3766BA000913B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = iOSEDNTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9640C0631A3766BA000913B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = iOSEDNTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9640C07D1A3766DB000913B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = OSXEDN/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9640C07E1A3766DB000913B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = OSXEDN/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9640C0801A3766DB000913B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = OSXEDNTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9640C0811A3766DB000913B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = OSXEDNTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		B5C7A64917C8F282005E0615 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -548,7 +1227,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -571,7 +1250,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -580,6 +1259,7 @@
 		B5C7A64C17C8F282005E0615 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/edn_objc.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "edn-objc/edn-objc-Prefix.pch";
@@ -592,6 +1272,7 @@
 		B5C7A64D17C8F282005E0615 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/edn_objc.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "edn-objc/edn-objc-Prefix.pch";
@@ -601,47 +1282,41 @@
 			};
 			name = Release;
 		};
-		B5C7A64F17C8F282005E0615 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "edn-objc/edn-objc-Prefix.pch";
-				INFOPLIST_FILE = "edn-objc-tests/edn-objc-tests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-objc",
-					"-all_load",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		B5C7A65017C8F282005E0615 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "edn-objc/edn-objc-Prefix.pch";
-				INFOPLIST_FILE = "edn-objc-tests/edn-objc-tests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-objc",
-					"-all_load",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9640C05E1A3766BA000913B9 /* Build configuration list for PBXNativeTarget "iOSEDN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9640C05F1A3766BA000913B9 /* Debug */,
+				9640C0601A3766BA000913B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9640C0611A3766BA000913B9 /* Build configuration list for PBXNativeTarget "iOSEDNTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9640C0621A3766BA000913B9 /* Debug */,
+				9640C0631A3766BA000913B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9640C07C1A3766DB000913B9 /* Build configuration list for PBXNativeTarget "OSXEDN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9640C07D1A3766DB000913B9 /* Debug */,
+				9640C07E1A3766DB000913B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9640C07F1A3766DB000913B9 /* Build configuration list for PBXNativeTarget "OSXEDNTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9640C0801A3766DB000913B9 /* Debug */,
+				9640C0811A3766DB000913B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B5C7A62117C8F282005E0615 /* Build configuration list for PBXProject "edn-objc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -656,15 +1331,6 @@
 			buildConfigurations = (
 				B5C7A64C17C8F282005E0615 /* Debug */,
 				B5C7A64D17C8F282005E0615 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B5C7A64E17C8F282005E0615 /* Build configuration list for PBXNativeTarget "edn-objc-tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B5C7A64F17C8F282005E0615 /* Debug */,
-				B5C7A65017C8F282005E0615 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

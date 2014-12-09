@@ -9,6 +9,8 @@
 #ifndef edn_objc_BMOEDNError_h
 #define edn_objc_BMOEDNError_h
 
+#import <Foundation/Foundation.h>
+
 typedef enum : NSInteger  {
     BMOEDNErrorNone = 0,
     BMOEDNErrorNoData,

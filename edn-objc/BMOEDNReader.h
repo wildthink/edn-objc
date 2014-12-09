@@ -12,12 +12,9 @@
 
 @interface BMOEDNReader : NSObject
 
-@property (strong, readonly, nonatomic) NSDictionary * transmogrifiers;
-
 -(instancetype)initWithOptions:(BMOEDNReadingOptions)options;
--(instancetype)initWithOptions:(BMOEDNReadingOptions)options
-               transmogrifiers:(NSDictionary *)transmogrifiers;
 
 -(id)parse:(NSData *)data error:(NSError **)error;
 -(id)parseStream:(NSInputStream *)data error:(NSError **)error;
+
 @end

@@ -25,11 +25,16 @@
     return objc_getAssociatedObject(self, @selector(ednMetadata));
 }
 
+-(BOOL)supportsEdnMetadata {
+    
+    BOOL isUnacceptable = ([self isEqual:[NSNull null]] || [@YES isEqual:self] || [@NO isEqual:self]);
+    return !isUnacceptable;
+}
+
 -(void)setEdnMetadata:(NSDictionary *)ednMetadata {
     
     if ([self isEqual:[NSNull null]]
-        //|| [self isKindOfClass:[NSConstantString class]]
-        || (__bridge CFBooleanRef)self == kCFBooleanTrue || (__bridge CFBooleanRef)self == kCFBooleanFalse) {
+        || [@YES isEqual:self] || [@NO isEqual:self]) {
         @throw [NSException exceptionWithName:BMOEDNException reason:@"Metadata cannot be applied to static objects, such as [NSNull null], NSString literals, or edn booleans." userInfo:nil];
     }
     

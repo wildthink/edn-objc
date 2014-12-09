@@ -45,13 +45,6 @@
 
 @implementation BMOEDNWriter
 
--(instancetype)initWithTransmogrifiers:(NSDictionary *)transmogrifiers {
-    if (self = [super init]) {
-        _transmogrifiers = transmogrifiers;
-    }
-    return self;
-}
-
 #pragma mark - external write methods
 
 -(BMOEDNWriterState *) writeRootObject:(id)obj state:(BMOEDNWriterState *)state error:(NSError **)error {
@@ -122,27 +115,8 @@
     else if ([obj isKindOfClass:[BMOEDNCharacter class]])
         [self appendCharacter:obj toState:state];
     else {
-        // have to iterate over all registered transmogrifiers
-        // with isKindOfClass predicate
-        __block BMOEDNTransmogrifier transmogrifier = nil;
-        [self.transmogrifiers enumerateKeysAndObjectsUsingBlock:^(id key, id val, BOOL *stop) {
-            if ([obj isKindOfClass:(Class)key]) {
-                transmogrifier = (BMOEDNTransmogrifier)val;
-                *stop = YES;
-            };
-        }];
-        if (transmogrifier){
-            NSError *err;
-            BMOEDNTaggedElement *transmogrifiedObject = transmogrifier(obj,&err);
-            if (err) {
-                state.error = err;
-                return;
-            }
-            [self appendTaggedObject:transmogrifiedObject toState:state];
-        } else {
-            state.error = BMOEDNErrorMessage(BMOEDNErrorInvalidData, @"Provided object cannot be EDN-serialized.");
-            return;
-        }
+        state.error = BMOEDNErrorMessage(BMOEDNErrorInvalidData, @"Provided object cannot be EDN-serialized.");
+        return;
     }
 }
 

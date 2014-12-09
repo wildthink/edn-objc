@@ -12,7 +12,7 @@
 
 /**
  Returns full document, un-lazily, or nil if data is not valid EDN.
- Uses stock transmogrifiers + registered classes/categories.
+ Uses registered classes/categories.
  */
 -(id)ednObject;
 

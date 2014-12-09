@@ -11,7 +11,7 @@
 @interface NSInputStream (BMOEDN)
 
 /**
- Returns a lazy EDN object for all objects, with stock transmogrifiers.
+ Returns a lazy EDN object for all objects
  */
 -(id)ednObject;
 

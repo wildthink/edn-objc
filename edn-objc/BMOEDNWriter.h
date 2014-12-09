@@ -10,10 +10,6 @@
 
 @interface BMOEDNWriter : NSObject
 
--(instancetype)initWithTransmogrifiers:(NSDictionary *)transmogrifiers DEPRECATED_ATTRIBUTE;
-
-@property (strong, readonly, nonatomic) NSDictionary * transmogrifiers DEPRECATED_ATTRIBUTE;
-
 // TODO: write into (or append to) an existing NSData?
 -(NSData *)writeToData:(id)obj error:(NSError **)error;
 -(NSString *)writeToString:(id)obj error:(NSError **)error;

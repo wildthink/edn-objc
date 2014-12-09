@@ -12,6 +12,7 @@
 
 - (NSData *)ednData;
 - (NSString *)ednString;
+-(BOOL)supportsEdnMetadata;
 
 @property (copy, nonatomic) NSDictionary * ednMetadata;
 
