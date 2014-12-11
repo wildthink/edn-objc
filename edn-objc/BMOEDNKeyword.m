@@ -11,11 +11,11 @@
 @implementation BMOEDNKeyword
 
 +(BMOEDNKeyword *)keywordWithNamespace:(NSString *)ns name:(NSString *)name {
-    return [[BMOEDNKeyword alloc] initWithNamespace:ns name:name];
+    return [[self alloc] initWithNamespace:ns name:name];
 }
 
 +(BMOEDNKeyword *)keywordWithName:(NSString *)name {
-    return [[BMOEDNKeyword alloc] initWithNamespace:nil name:name];
+    return [[self alloc] initWithNamespace:nil name:name];
 }
 
 -(BOOL)isEqual:(id)object {

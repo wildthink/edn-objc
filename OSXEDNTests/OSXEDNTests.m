@@ -12,6 +12,8 @@
 
 #import "NSCodingFoo.h"
 #import "NSCodingBar.h"
+#import "WTEDNReader.h"
+#import "BMOEDNWriter.h"
 
 @interface edn_objc_OSX_Tests : XCTestCase
 
@@ -693,12 +695,81 @@
     XCTAssertEqualObjects(foo, roundTripped, @"");
 }
 
+- (void)testStringReader {
+    id root = [WTEDNReader readString:@"\"hello \\\"there\"" error:NULL];
+    NSLog (@"ADN => %@", root);
+}
+
+- (void)testQuotedReader {
+    id root = [WTEDNReader readString:@"'\"hello\" there again'" error:NULL];
+    NSLog (@"ADN => %@", root);
+}
+
+- (void)testNSSymbolReader {
+    NSString *str = @"foo.bar/my-symbol";
+    id root = [WTEDNReader readString:str error:NULL];
+    NSLog (@"ns Symbol => %@", root);
+    XCTAssertEqualObjects([root ns], @"foo.bar", @"");
+    XCTAssertEqualObjects([root name], @"my-symbol", @"");
+}
+
+- (void)testNoNSSymbolReader {
+    NSString *str = @"foo.bar_my-symbol+foo";
+    id root = [WTEDNReader readString:str error:NULL];
+    NSLog (@"no_ns Symbol => %@", root);
+    
+    XCTAssertNil([root ns], @"");
+    XCTAssertEqualObjects([root name], str, @"");
+}
+
+- (void)testKeywordReader {
+    NSString *str = @"foo.bar/key:";
+    id root = [WTEDNReader readString:str error:NULL];
+    NSLog (@"Keyword => %@", root);
+    
+//    XCTAssertNil([root ns], @"");
+//    XCTAssertEqualObjects([root name], str, @"");
+}
+
+
+- (void)testSamplerFile {
+    NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"sampler" ofType:@"adn"];
+//    NSString *path = @"/Users/jason/Sandbox/edn-objc/edn-objc-tests/sampler.adn";
+    NSData *data = [NSData dataWithContentsOfFile:path];
+//    NSError *error;
+    WTEDNReader *reader = [[WTEDNReader alloc] initWithData:data];
+    id node;
+    NSString *str;
+    BMOEDNWriter *writer = [BMOEDNWriter new];
+
+    while ((node = [reader read])) {
+        str = [writer writeToString:node error:NULL];
+        NSLog (@"Sampler Node => %@", str);
+    }
+}
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
+}
+
+- (void)testNumberReader {
+    NSString *str = @"12,898.87";
+    id root = [WTEDNReader readString:str error:NULL];
+    NSLog (@"Number %@", root);
+
+    str = @"-12,898.87";
+    root = [WTEDNReader readString:str error:NULL];
+    NSLog (@"Number %@", root);
+
+    str = @".045";
+    root = [WTEDNReader readString:str error:NULL];
+    NSLog (@"Number %@", root);
+
+    //    XCTAssertNil([root ns], @"");
+    //    XCTAssertEqualObjects([root name], str, @"");
 }
 
 @end

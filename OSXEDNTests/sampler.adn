@@ -1,0 +1,20 @@
+(def-screen main
+	(tabbar
+		[accounts
+		 cashflow]))
+		
+(def-screen accounts
+	:icon "cash-icon"
+	:title "Accounts"
+    :data (fetch
+        :entity "WTETransaction"
+        :sort ["recurring/ASC" "name/DESC"]
+        :sectionTitle "#(Enums type:'WTTimePeriod' nameFor:%1)"
+	)
+	:cells {
+	:WTETransaction { :textyle (Textyle "WTETransaction" :cell)
+					  :bindings { :progress #(div (income :total)) %1 }
+					  :detail-disclosure (present income-detail :with selectedCell )
+				  }
+	}
+)
