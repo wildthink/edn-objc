@@ -20,6 +20,8 @@
 #import "BMOEDNCharacter.h"
 #import "BMOEDNError.h"
 #import "BMOEDNRatio.h"
+#import "WTToken.h"
+
 
 static NSCharacterSet *whitespace, *newline, *quoted,*numberPrefix,*digits,*symbolChars,*number_delimiters;
 static NSString *CLOSE = @"_CLOSE_";
@@ -54,7 +56,8 @@ static inline char peekAtNextChar (WTEDNReader *reader) {
 
 // NOTE: Handling the column is a good bit tricker when pushBack is supported :-(
 // Skipping that case for now.
-static inline char getChar (WTEDNReader *reader) {
+static inline char getChar (WTEDNReader *reader)
+{
     if (reader->_currentNdx >= reader->_dataLength) {
         return '\0';
     }
@@ -217,6 +220,12 @@ start:
             break;
             
         case '(':
+            result = [BMOEDNList new];
+            for (sexpr = [self read]; sexpr && sexpr != CLOSE; sexpr = [self read]) {
+                [result addObject:sexpr];
+            }
+            break;
+
         case '[':
             result = [NSMutableArray new];
             for (sexpr = [self read]; sexpr && sexpr != CLOSE; sexpr = [self read]) {
@@ -231,10 +240,10 @@ start:
         
         case '"':
         case '\'':
-            return [self readStringClosedByChar:ch];
-        
+            result = [self readStringClosedByChar:ch];
+            break;
         case '\\':
-            return [self readCharacter];
+            result = [self readCharacter];
             break;
             
         case '\n':
@@ -247,21 +256,28 @@ start:
             
         case '+':
         case '-':
-        case '.':
             pch = peekAtNextChar (self);
             pushBackChar(self, ch);
             if ([digits characterIsMember:pch]) {
-                return [self readNumber];
+                result = [self readNumber];
             }
             break;
         default:
             pushBackChar(self, ch);
             if ([digits characterIsMember:ch]) {
-                return [self readNumber];
+                result = [self readNumber];
             }
-            return [self readSymbol];
+            result = [self readSymbol];
     }
-    return result;
+    if (self.options & WTEDNReaderDebug) {
+        WTToken *token = [WTToken tokenFor:result];
+        token.lineno = _currentLine;
+        token.column = _currentColumn;
+        return token;
+    }
+    else {
+        return result;
+    }
 }
 
 - readCharacter
@@ -283,6 +299,10 @@ start:
 
 - readNumber
 {
+    char ch = peekAtNextChar(self);
+    if (ch == '+') {
+        ch = getChar(self);
+    }
     NSInteger mark = _currentNdx;
     advanceToDelimiter (self);
     NSString *str = [[NSString alloc]
@@ -345,11 +365,11 @@ start:
     if (namespace_mark < 0)
     {
         name = [[NSString alloc]
-                initWithBytes:&_bytes[mark] length:(end_mark - mark - 1) encoding:NSUTF8StringEncoding];
+                initWithBytes:&_bytes[mark] length:(end_mark - mark) encoding:NSUTF8StringEncoding];
     }
     else {
         name = [[NSString alloc]
-                initWithBytes:&_bytes[namespace_mark + 1] length:(end_mark - namespace_mark - 2)
+                initWithBytes:&_bytes[namespace_mark + 1] length:(end_mark - namespace_mark - 1)
                      encoding:NSUTF8StringEncoding];
     }
     

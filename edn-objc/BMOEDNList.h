@@ -8,6 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
+@interface BMOEDNList : NSObject<NSCopying, NSFastEnumeration>
+
+- (void)addObject:anObject;
+
+/**
+ Returns a new list with the provided object
+ as the new head.
+ */
+//-(BMOEDNList *)listByPushing:(id)head;
+/**
+ Returns a new list with the rest object as
+ the new head.
+ */
+//-(BMOEDNList *)listByPopping;
+
+@end
+    
+/*
 @interface BMOEDNConsCell : NSObject {
     @package
     id _first;
@@ -33,15 +51,6 @@
 
 -(BOOL)isEqualToList:(BMOEDNList *)list;
 
-/**
- Returns a new list with the provided object
- as the new head.
- */
--(BMOEDNList *)listByPushing:(id)head;
-/**
- Returns a new list with the rest object as
- the new head.
- */
--(BMOEDNList *)listByPopping;
 
 @end
+*/

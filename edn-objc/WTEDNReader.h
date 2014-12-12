@@ -12,7 +12,8 @@ typedef NS_OPTIONS(NSUInteger, WTEDNReaderOptions) {
     WTEDNReaderMultipleObjects = (1UL << 0),
     // lazy parsing implies multiple objects
     WTEDNReaderLazyParsing = (1UL << 1),
-    WTEDNReaderStrict = (1UL << 2)
+    WTEDNReaderStrict = (1UL << 2),
+    WTEDNReaderDebug = (1UL << 4)       // Wraps tokens to provide lineno
 };
 
 

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WTToken : NSObject
+@interface WTToken : NSObject <NSObject>
 
 @property (nonatomic) NSInteger lineno;
 @property (nonatomic) NSInteger column;

@@ -17,6 +17,14 @@
     return token;
 }
 
+- (NSString*)description {
+    return [NSString stringWithFormat:@"<%ld %ld>%@", (long)self.lineno, (long)self.column, [self.representedObject description]];
+}
+
+- (NSString *)debugDescription {
+    return [NSString stringWithFormat:@"<TOKEN %ld %ld>%@", (long)self.lineno, (long)self.column, [self.representedObject description]];
+}
+
 #pragma mark Forwarding machinery
 
 - (Class)class {
@@ -56,12 +64,6 @@
 
 - (BOOL)isMemberOfClass:(Class)class {
     return [self.representedObject isMemberOfClass:class];
-}
-
-- (BOOL)isProxy {
-    // not really a proxy -- we just inherit from NSProxy because it makes
-    // method signature lookup simpler
-    return YES;
 }
 
 @end

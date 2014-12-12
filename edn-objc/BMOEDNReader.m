@@ -298,6 +298,22 @@ id BMOParseSymbolType(id<BMOEDNReaderState> parserState, Class symbolClass) {
     }
     
     BMOEDNList *list = [BMOEDNList new];
+    
+    [self skipWhitespace:parserState];
+    while (parserState.valid
+           && parserState.currentCharacter != ')') {
+        id newObject = [self parseObject:parserState];
+        if (parserState.error != nil) {
+            return nil;
+        }
+        [list addObject:newObject];
+        
+        [self skipWhitespace:parserState];
+    }
+    [parserState moveAhead];
+
+    return list;
+/* jmj
     BMOEDNConsCell *cons = nil;
     
     [self skipWhitespace:parserState];
@@ -324,6 +340,7 @@ id BMOParseSymbolType(id<BMOEDNReaderState> parserState, Class symbolClass) {
     [parserState moveAhead];
     list->_hashed = NO; // reset hash token, just in case iOS called it while constructing
     return list;
+ */
 }
 
 -(id)parseMap:(id<BMOEDNReaderState>)parserState {

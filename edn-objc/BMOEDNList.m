@@ -8,9 +8,51 @@
 
 #import "BMOEDNList.h"
 
-@implementation BMOEDNConsCell
+@interface BMOEDNList ()
+
+@property (nonatomic, strong) NSMutableArray *array;
+
+@end
+
+@implementation BMOEDNList
+
+- (instancetype)init {
+    self = [super init];
+    self.array = [NSMutableArray new];
+    return self;
+}
+
+-(id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
+-(NSUInteger)hash {
+    return [self.array hash];
+}
 
 -(BOOL)isEqual:(id)object {
+    if (![object isKindOfClass:[BMOEDNList class]]) return NO;
+    return [self isEqualToList:(BMOEDNList *)object];
+}
+
+-(BOOL)isEqualToList:(BMOEDNList *)list {
+    return [self.array isEqualToArray:list.array];
+}
+
+- (void)addObject:anObject;
+{
+    [self.array addObject:anObject];
+}
+
+-(NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id [])buffer count:(NSUInteger)len {
+    return [self.array countByEnumeratingWithState:state objects:buffer count:len];
+}
+
+@end
+/*
+@implementation BMOEDNConsCell
+ 
+ -(BOOL)isEqual:(id)object {
     if (![object isKindOfClass:[BMOEDNConsCell class]]) return NO;
     return [self isEqualToConsCell:(BMOEDNConsCell *)object];
 }
@@ -120,3 +162,6 @@
 }
 
 @end
+ 
+*/
+
