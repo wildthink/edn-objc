@@ -117,9 +117,9 @@ static inline void advanceToDelimiter (WTEDNReader *reader) {
         whitespace = [NSCharacterSet whitespaceCharacterSet];
         digits = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
 
-        NSMutableCharacterSet *alpha = [NSMutableCharacterSet alphanumericCharacterSet];
-        [alpha addCharactersInString:@".*+!-_?$%&=:#/<>"];
-        symbolChars = [alpha copy];
+//        NSMutableCharacterSet *alpha = [NSMutableCharacterSet alphanumericCharacterSet];
+//        [alpha addCharactersInString:@".*+!-_?$%&=:#/<>"];
+//        symbolChars = [alpha copy];
 
         NSMutableCharacterSet *cset = [NSMutableCharacterSet whitespaceAndNewlineCharacterSet];
         [cset addCharactersInString:@"{}()[]"];
