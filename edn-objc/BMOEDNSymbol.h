@@ -16,12 +16,22 @@
 -(instancetype)initWithNamespace:(NSString *)ns
                             name:(NSString *)name;
 
-+(BMOEDNSymbol *)symbolWithNamespace:(NSString *)ns
++(instancetype)symbolWithNamespace:(NSString *)ns
                                 name:(NSString *)name;
 
-/**
- * Do not use this method to compare to any subclasses.
- */
+-(BOOL)isKeyword;
+
 -(BOOL)isEqualToSymbol:(BMOEDNSymbol *)object;
+
+-(Class)asClassDesignation;
+
+@end
+
+@interface BMOEDNKeyword : BMOEDNSymbol
+
+//+(BMOEDNKeyword *) keywordWithNamespace:(NSString *)ns name:(NSString *)name;
+//+(BMOEDNKeyword *) keywordWithName:(NSString *)name;
+
+//-(BOOL)isEqualToKeyword:(BMOEDNKeyword *)object;
 
 @end

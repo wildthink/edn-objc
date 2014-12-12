@@ -13,7 +13,7 @@
 	)
 	:cells {
 	:WTETransaction { :textyle (Textyle "WTETransaction" :cell)
-					  :bindings { :progress #(div (income :total)) %1 }
+					  :bindings { :progress (div (income :total)) }
 					  :detail-disclosure (present income-detail :with selectedCell )
 				  }
 	}

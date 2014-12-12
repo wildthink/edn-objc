@@ -11,7 +11,6 @@
 #import <dispatch/once.h>
 #import <objc/runtime.h>
 #import "BMOEDNRepresentation.h"
-#import "BMOEDNSymbol.h"
 
 // the registry!
 static CFMutableDictionaryRef TagClassMap;

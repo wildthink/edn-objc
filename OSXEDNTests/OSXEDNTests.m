@@ -183,7 +183,7 @@
 - (void)testKeywords
 {
     XCTAssertEqualObjects([@":keyword" ednObject], [[BMOEDNKeyword alloc] initWithNamespace:nil name:@"keyword"], @"");
-    XCTAssertEqualObjects([@":keyword" ednObject], [BMOEDNKeyword keywordWithName:@"keyword"], @"");
+    XCTAssertEqualObjects([@":keyword" ednObject], [BMOEDNKeyword symbolWithNamespace:nil name:@"keyword"], @"");
     XCTAssertEqualObjects([@":namespaced/keyword" ednObject], [[BMOEDNKeyword alloc] initWithNamespace:@"namespaced" name:@"keyword"], @"");
     id keyword;
     XCTAssertThrows(keyword = [[BMOEDNKeyword alloc] initWithNamespace:@"something" name:nil], @"");
@@ -275,8 +275,8 @@
 }
 
 - (void)testSerializeMap {
-    id map = @{[BMOEDNKeyword keywordWithNamespace:@"my" name:@"one"]:@1,
-               [BMOEDNKeyword keywordWithNamespace:@"your" name:@"two"]:@2,
+    id map = @{[BMOEDNKeyword symbolWithNamespace:@"my" name:@"one"]:@1,
+               [BMOEDNKeyword symbolWithNamespace:@"your" name:@"two"]:@2,
                @3:[BMOEDNSymbol symbolWithNamespace:@"surprise" name:@"three"]};
     XCTAssertEqualObjects([[map ednString] ednObject], map, @"Ordering is not guaranteed, so we round-trip it up.");
 }
@@ -368,7 +368,7 @@
     [array setEdnMetadata:@{ @1: @"one" }];
     XCTAssertEqualObjects([array ednString], @"^{ 1 \"one\" } [ 1 2 3 ]", @"");
     id list = [@"( one two three )" ednObject];
-    [list setEdnMetadata:@{ [BMOEDNKeyword keywordWithNamespace:nil name:@"type"] : [BMOEDNSymbol symbolWithNamespace:nil name:@"list"] }];
+    [list setEdnMetadata:@{ [BMOEDNKeyword symbolWithNamespace:nil name:@"type"] : [BMOEDNSymbol symbolWithNamespace:nil name:@"list"] }];
     array = [array arrayByAddingObject:list];
     XCTAssertEqualObjects([array ednString], @"[ 1 2 3 ^{ :type list } ( one two three ) ]", @"Array metadata is not preserved (array with added object is a new array).");
 }
@@ -769,6 +769,10 @@
     NSLog (@"Number %@", root);
 
     str = @"-12,898.87";
+    root = [WTEDNReader readString:str error:NULL];
+    NSLog (@"Number %@", root);
+
+    str = @"-1287898.87";
     root = [WTEDNReader readString:str error:NULL];
     NSLog (@"Number %@", root);
 

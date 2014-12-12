@@ -9,22 +9,19 @@
 #import "WTEDNReader.h"
 
 #import "BMOEDNSymbol.h"
-#import "BMOEDNKeyword.h"
 #import "BMOEDNList.h"
 #import "BMOEDNTaggedElement.h"
-#import "BMOEDNRepresentation.h"
-#import "BMOEDNRegistry.h"
 #import "NSObject+BMOEDN.h"
-#import "BMOEDNRoot.h"
-#import "BMOLazyEnumerator.h"
 #import "BMOEDNCharacter.h"
-#import "BMOEDNError.h"
 #import "BMOEDNRatio.h"
 #import "WTToken.h"
 
 
-static NSCharacterSet *whitespace, *newline, *quoted,*numberPrefix,*digits,*symbolChars,*number_delimiters;
-static NSString *CLOSE = @"_CLOSE_";
+static NSCharacterSet *whitespace, *digits, *symbolChars,*delimiters;
+static id CLOSE_P;
+static id CLOSE_B;
+static id CLOSE_CB;
+
 static NSDictionary *literalValues;
 static NSNumberFormatter *numberFormatter;
 
@@ -39,9 +36,6 @@ static NSNumberFormatter *numberFormatter;
 
 @property (nonatomic, strong) NSData *data;
 @property (nonatomic, strong) NSError *error;
-
-
-//@property (nonatomic, strong) NSMutableArray *stack;
 
 @end
 
@@ -92,17 +86,19 @@ static inline void pushBackChar (WTEDNReader *reader, char ch) {
     }
 }
 
-static inline void skipWhitespace (WTEDNReader *reader) {
+static inline BOOL skipWhitespace (WTEDNReader *reader) {
     char ch = getChar (reader);
     while ([whitespace characterIsMember:ch]) {
         ch = getChar (reader);
     }
+    if (ch == '\0') return YES;
     pushBackChar(reader, ch);
+    return NO;
 }
 
 static inline void advanceToDelimiter (WTEDNReader *reader) {
     char ch = getChar (reader);
-    while (! (ch == '\0' || [number_delimiters characterIsMember:ch])) {
+    while (! (ch == '\0' || [delimiters characterIsMember:ch])) {
         ch = getChar (reader);
     }
     if (ch == '\0') ++(reader->_currentNdx);
@@ -115,38 +111,27 @@ static inline void advanceToDelimiter (WTEDNReader *reader) {
 
 +(void)initialize
 {
-    if (whitespace == nil) {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+
         whitespace = [NSCharacterSet whitespaceCharacterSet];
-    }
-    if (newline == nil) {
-        newline = [NSCharacterSet newlineCharacterSet];
-    }
-    if (quoted == nil) {
-        quoted = [NSCharacterSet characterSetWithCharactersInString:@"\\\"rnt"];
-    }
-    if (numberPrefix == nil) {
-        numberPrefix = [NSCharacterSet characterSetWithCharactersInString:@"+-."];
-    }
-    if (digits == nil) {
         digits = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
-    }
-    if (symbolChars == nil) {
+
         NSMutableCharacterSet *alpha = [NSMutableCharacterSet alphanumericCharacterSet];
         [alpha addCharactersInString:@".*+!-_?$%&=:#/<>"];
         symbolChars = [alpha copy];
-    }
-    if (number_delimiters == nil) {
+
         NSMutableCharacterSet *cset = [NSMutableCharacterSet whitespaceAndNewlineCharacterSet];
         [cset addCharactersInString:@"{}()[]"];
-        number_delimiters = [cset copy];
-    }
-    
-    if (! numberFormatter) {
+        delimiters = [cset copy];
+        
         numberFormatter = [[NSNumberFormatter alloc] init];
         numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
-    }
-    
-    if (literalValues == nil) {
+        
+        CLOSE_P = @(')');
+        CLOSE_B = @(']');
+        CLOSE_CB = @('}');
+        
         literalValues =
         @{
           @"true": @YES,
@@ -159,9 +144,14 @@ static inline void advanceToDelimiter (WTEDNReader *reader) {
           @('t'): [BMOEDNCharacter characterWithUnichar:'\t'],
           @(' '): [BMOEDNCharacter characterWithUnichar:' '],
           
+          @"space":[BMOEDNCharacter characterWithUnichar:' '],
+          @"newline":[BMOEDNCharacter characterWithUnichar:'\n'],
+          @"tab":[BMOEDNCharacter characterWithUnichar:'\t'],
+          @"return":[BMOEDNCharacter characterWithUnichar:'\r'],
+          
           @"nil": [NSNull null],
-        };
-    }
+          };
+    });
 }
 
 + readString:(NSString*)str error:(NSError **)error {
@@ -195,8 +185,11 @@ static inline void advanceToDelimiter (WTEDNReader *reader) {
 
 - read
 {
+    BOOL done;
+
 start:
-    skipWhitespace (self);
+    done = skipWhitespace (self);
+    if (done) return nil;
     
     unichar pch, ch = getChar(self);
     id result;
@@ -208,36 +201,46 @@ start:
         case '{':
             result = [NSMutableDictionary new];
             do {
-                if (CLOSE != (key = [self read])) {
+                if (CLOSE_CB != (key = [self read])) {
                     sexpr = [self read];
                     if (key && sexpr) {
                         [result setObject:sexpr forKey:key];
                     }
+                    else {
+                        [[NSException exceptionWithName:@"WTEDNReader Error" reason:@"Unbalanced map" userInfo:nil] raise];
+                    }
                 }
             }
-            while (key == CLOSE);
+            while (key != CLOSE_CB);
             
             break;
             
         case '(':
             result = [BMOEDNList new];
-            for (sexpr = [self read]; sexpr && sexpr != CLOSE; sexpr = [self read]) {
+            for (sexpr = [self read]; sexpr && sexpr != CLOSE_P; sexpr = [self read]) {
+                if (sexpr == nil) {
+                    [[NSException exceptionWithName:@"WTEDNReader Error" reason:@"Unbalanced list" userInfo:nil] raise];
+                }
                 [result addObject:sexpr];
             }
             break;
 
         case '[':
             result = [NSMutableArray new];
-            for (sexpr = [self read]; sexpr && sexpr != CLOSE; sexpr = [self read]) {
+            for (sexpr = [self read]; sexpr && sexpr != CLOSE_B; sexpr = [self read]) {
+                if (sexpr == nil) {
+                    [[NSException exceptionWithName:@"WTEDNReader Error" reason:@"Unbalanced list" userInfo:nil] raise];
+                }
                 [result addObject:sexpr];
             }
             break;
 
         // CLOSE
-        case '}': case ']': case ')':
-            return CLOSE;
-            break;
-        
+        case '}': return CLOSE_CB;
+        case ']': return CLOSE_B;
+        case ')': return CLOSE_P;
+
+        // QUOTED STRING
         case '"':
         case '\'':
             result = [self readStringClosedByChar:ch];
@@ -253,6 +256,33 @@ start:
         case '\0':
             // EOF
             return nil;
+        
+        case '#':
+            pch = peekAtNextChar (self);
+            if (pch == '_') {
+                ch = getChar(self);
+                [self read]; // discard the next expression
+                return [self read];
+            }
+            else if (pch == '{') {
+                result = [NSMutableSet new];
+                for (sexpr = [self read]; sexpr && sexpr != CLOSE_CB; sexpr = [self read]) {
+                    [result addObject:sexpr];
+                }
+            }
+            else {
+                result = [BMOEDNTaggedElement elementWithTag:[self read] element:[self read]];
+            }
+            break;
+            
+        case '^': {
+            id metadata = [self read];
+            result = [self read];
+            if ([result supportsEdnMetadata]) {
+                [result setEdnMetadata:metadata];
+            }
+        }
+        break;
             
         case '+':
         case '-':
@@ -260,6 +290,9 @@ start:
             pushBackChar(self, ch);
             if ([digits characterIsMember:pch]) {
                 result = [self readNumber];
+            }
+            else {
+                result = [self readSymbol];
             }
             break;
         default:

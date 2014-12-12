@@ -7,7 +7,7 @@
 //
 
 #import "BMOEDNUnarchiver.h"
-#import "BMOEDNKeyword.h"
+#import "BMOEDNSymbol.h"
 
 @interface BMOEDNUnarchiver ()
 
@@ -39,7 +39,7 @@
 #pragma mark - NSCoding
 
 -(id)decodeObjectForKey:(NSString *)key {
-    BMOEDNKeyword *keyword = [BMOEDNKeyword keywordWithName:key];
+    BMOEDNKeyword *keyword = [BMOEDNKeyword symbolWithNamespace:nil name:key];
     id obj = _data.element[keyword];
     if ([obj isEqual:[NSNull null]]) {
         return nil;

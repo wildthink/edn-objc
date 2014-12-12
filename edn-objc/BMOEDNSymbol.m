@@ -21,13 +21,22 @@
     return self;
 }
 
-+(BMOEDNSymbol *)symbolWithNamespace:(NSString *)ns name:(NSString *)name {
+-(BOOL)isKeyword {
+    return NO;
+}
+
++(instancetype)symbolWithNamespace:(NSString *)ns name:(NSString *)name {
     return [[self alloc] initWithNamespace:ns name:name];
+}
+
+- (Class)asClassDesignation;
+{
+    return Nil;
 }
 
 -(BOOL)isEqual:(id)object {
     if (object == self) return true;
-    if (![object isMemberOfClass:[BMOEDNSymbol class]]) return false;
+    if (![object isMemberOfClass:[self class]]) return false;
     return [self isEqualToSymbol:(BMOEDNSymbol *)object];
 }
 
@@ -47,6 +56,40 @@
 
 -(id)copyWithZone:(NSZone *)zone {
     return self;
+}
+
+@end
+
+
+
+@implementation BMOEDNKeyword
+
+//+(BMOEDNKeyword *)keywordWithNamespace:(NSString *)ns name:(NSString *)name {
+//    return [[self alloc] initWithNamespace:ns name:name];
+//}
+
+//+(BMOEDNKeyword *)keywordWithName:(NSString *)name {
+//    return [[self alloc] initWithNamespace:nil name:name];
+//}
+
+-(BOOL)isKeyword {
+    return YES;
+}
+
+/*
+-(BOOL)isEqual:(id)object {
+    if (object == self) return YES;
+    if (![object isMemberOfClass:[BMOEDNKeyword class]]) return NO;
+    return [self isEqualToKeyword:(BMOEDNKeyword *)object];
+}
+
+-(BOOL)isEqualToKeyword:(BMOEDNKeyword *)object {
+    return [super isEqualToSymbol:object];
+}
+*/
+
+-(NSString *)description {
+    return [@":" stringByAppendingString:[super description]];
 }
 
 @end
