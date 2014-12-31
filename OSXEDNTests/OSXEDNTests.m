@@ -737,6 +737,14 @@
 //    XCTAssertEqualObjects([root name], str, @"");
 }
 
+- (void)testKeywordMapReader {
+    NSString *str = @"{ foo.bar/key: 34 name: 'fred' }";
+    id root = [WTEDNReader readString:str error:NULL];
+    NSLog (@"Map => %@", root);
+    
+    //    XCTAssertNil([root ns], @"");
+    //    XCTAssertEqualObjects([root name], str, @"");
+}
 
 - (void)testSamplerFile {
     NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"sampler" ofType:@"adn"];

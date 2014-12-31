@@ -77,7 +77,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #  May use :tag
 
-  s.source       = { :git => "https://github.com/wildthink/edn-objc.git", :branch => "master" }
+  s.source       = { :git => "https://github.com/wildthink/edn-objc.git", :tag => "v0.5" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

@@ -191,6 +191,7 @@ start:
     done = skipWhitespace (self);
     if (done) return nil;
     
+    NSInteger start_mark = _currentNdx;
     unichar pch, ch = getChar(self);
     id result;
     id key, sexpr;
@@ -260,7 +261,7 @@ start:
         case '#':
             pch = peekAtNextChar (self);
             if (pch == '_') {
-                ch = getChar(self);
+                ch = getChar(self); // skip the '_'
                 [self read]; // discard the next expression
                 return [self read];
             }
@@ -300,12 +301,17 @@ start:
             if ([digits characterIsMember:ch]) {
                 result = [self readNumber];
             }
-            result = [self readSymbol];
+            else {
+                result = [self readSymbol];
+            }
     }
-    if (self.options & WTEDNReaderDebug) {
+    if ((self.options & WTEDNReaderDebug) && ![result isToken])
+    {
         WTToken *token = [WTToken tokenFor:result];
         token.lineno = _currentLine;
         token.column = _currentColumn;
+        token.position = start_mark;
+        token.length = _currentNdx - start_mark;
         return token;
     }
     else {
@@ -339,7 +345,7 @@ start:
     NSInteger mark = _currentNdx;
     advanceToDelimiter (self);
     NSString *str = [[NSString alloc]
-                     initWithBytes:&_bytes[mark] length:(_currentNdx - mark - 1) encoding:NSUTF8StringEncoding];
+                     initWithBytes:&_bytes[mark] length:(_currentNdx - mark) encoding:NSUTF8StringEncoding];
     return [numberFormatter numberFromString:str];
 }
 
@@ -366,7 +372,8 @@ start:
     
     char ch = getChar(self);
     
-    while ([symbolChars characterIsMember:ch]) {
+//    while ([symbolChars characterIsMember:ch]) {
+    while (! [delimiters characterIsMember:ch]) {
         ch = getChar(self);
         if (ch == '/') namespace_mark = _currentNdx - 1;
     }
@@ -384,7 +391,8 @@ start:
     }
     if ( !(self.options & WTEDNReaderStrict) && _bytes[end_mark - 2] == ':') {
         symbolClass = [BMOEDNKeyword class];
-        --end_mark;
+        end_mark -= 2;
+//        --end_mark;
     }
     
     pushBackChar(self, ch);

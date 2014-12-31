@@ -13,9 +13,14 @@
 @property (nonatomic) NSInteger lineno;
 @property (nonatomic) NSInteger column;
 
+@property (nonatomic) NSInteger position;
+@property (nonatomic) NSInteger length;
+
 @property (nonatomic, strong) NSObject *representedObject;
 
 
 + (instancetype)tokenFor:(NSObject*)representedObject;
+
+- (BOOL)isToken;
 
 @end

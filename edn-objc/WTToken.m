@@ -17,6 +17,10 @@
     return token;
 }
 
+- (BOOL)isToken {
+    return YES;
+}
+
 - (NSString*)description {
     return [NSString stringWithFormat:@"<%ld %ld>%@", (long)self.lineno, (long)self.column, [self.representedObject description]];
 }

@@ -86,10 +86,10 @@
 -(BOOL)isEqualToKeyword:(BMOEDNKeyword *)object {
     return [super isEqualToSymbol:object];
 }
-*/
 
 -(NSString *)description {
     return [@":" stringByAppendingString:[super description]];
 }
+*/
 
 @end
